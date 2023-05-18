@@ -4,7 +4,12 @@ CURRENT_DIR=$(pwd) # Get the current directory
 SEARCHED_DIR_ARG=$@ # used if there are multiple arguments
 ARG_TOTAL=$# # used for condition for number of arguments logic
 
-function cls_no_arg() {
+function clear_and_current_dir() {
+    clear;
+    echo "Current Directory: ${CURRENT_DIR}"; 
+}
+
+function clsl_no_arg() {
     clear;
     echo "Current Directory: ${CURRENT_DIR}"; 
     if [ "${1}" != "" ]
@@ -52,11 +57,11 @@ function list_file() {
 # Get Searched Directory
 if [ ${ARG_TOTAL} = 0 ]
 then
-    cls_no_arg
+    clear_and_current_dir
+    clsl_no_arg
 else
-    clear;
     # echo "${ARG_TOTAL}";
-    echo "Current Directory: ${CURRENT_DIR}"; 
+    clear_and_current_dir
     searched_file
 fi
 
