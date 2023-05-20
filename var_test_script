@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -xv
+
+# var_test_script
+identify=value
+

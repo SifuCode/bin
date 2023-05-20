@@ -13,12 +13,12 @@ function clsla_no_arg() {
     if [ "${1}" != "" ]
     then
         echo "Searched Directory: ${1}"
-        echo ""
     fi;
-    no_arg_ls
+    echo ""
+    no_arg_list_files
 }
 
-function no_arg_ls() {
+function no_arg_list_files() {
     if [ "${1}" = "" ]
         then
             # ls -F ${1} --color=auto
@@ -29,13 +29,18 @@ function no_arg_ls() {
     fi
 }
 
-
 function searched_file() {
     for ARG in ${SEARCHED_DIR_ARG}
     do
         if [ "${ARG}" != "" ]
         then
-            echo "Searched Directory: ${ARG}"
+           if [ -d ${ARG} ] 
+           then    
+                echo "Searched Directory: ${ARG}"
+            elif [ -f ${ARG} ]
+            then
+                echo "Searched file: ${ARG}"
+            fi
         fi
     done
     echo ""

@@ -15,7 +15,13 @@ function clsl_no_arg() {
     if [ "${1}" != "" ]
         then
             echo "Searched Directory: ${1}"
+            # echo ""
         fi;
+    echo ""
+    no_arg_list_files
+}
+
+function no_arg_list_files() {
     if [ "${1}" = "" ]
         then
             # ls -F ${1} --color=auto
@@ -31,7 +37,13 @@ function searched_file() {
     do
         if [ "${ARG}" != "" ]
         then
-            echo "Searched Directory: ${ARG}"
+           if [ -d ${ARG} ] 
+           then    
+                echo "Searched Directory: ${ARG}"
+            elif [ -f ${ARG} ]
+            then
+                echo "Searched file: ${ARG}"
+            fi
         fi
     done
     echo ""
@@ -43,11 +55,9 @@ function list_file() {
     do
         if [ "${ARG}" = "" ]
         then
-            # ls -F ${ARG} --color=auto  
             ls -lthF ${ARG} --color=auto
             echo ""  
         else
-            # ls -F "${ARG}" --color=auto
             ls -lthF "${ARG}" --color=auto
             echo ""
         fi

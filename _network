@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Get the list of possible WIFI connections
+nmcli d wifi list

@@ -14,6 +14,11 @@ function cls_no_arg() {
         then
             echo "Searched Directory: ${1}"
         fi;
+    echo ""
+    no_arg_list_files
+}
+
+function no_arg_list_files() {
     if [ "${1}" = "" ]
         then
             ls -F ${1} --color=auto
@@ -27,7 +32,13 @@ function searched_file() {
     do
         if [ "${ARG}" != "" ]
         then
-            echo "Searched Directory: ${ARG}"
+           if [ -d ${ARG} ] 
+           then    
+                echo "Searched Directory: ${ARG}"
+            elif [ -f ${ARG} ]
+            then
+                echo "Searched file: ${ARG}"
+            fi
         fi
     done
     echo ""
