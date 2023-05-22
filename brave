@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Launch Brave Browser
+brave-browser-nightly &
