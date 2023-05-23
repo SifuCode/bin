@@ -1,0 +1,7 @@
+# Folders to be ignored
+anaconda3/
+bash_scripting_book/
+test/
+
+# Files to be ignored
+/web
