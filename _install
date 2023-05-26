@@ -1,5 +1,5 @@
 #!/bin/bash
 
 # Install command shortcut
-sudo apt install ${1}
+sudo apt install -y ${1}
 
