@@ -5,7 +5,7 @@ SEARCHED_DIR_ARG=$@ # used if there are multiple arguments
 ARG_TOTAL=$# # used for condition for number of arguments logic
 
 function clear_and_current_dir() {
-    clear;
+    clear -x;
     echo "Current Directory: ${CURRENT_DIR}"; 
 }
 
